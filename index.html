@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepanjan Bhol - AI Systems Leader & Engineering Manager</title>
+    <meta name="description" content="Senior Principal/Staff Software Engineering Manager at Microsoft, AI Systems Leader, 4 Patent Holder, Stanford GSB">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-light: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .social-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-link i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 10px 25px;
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-text h3 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--bg-white);
+        }
+
+        .experience-item {
+            background: var(--bg-light);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateX(10px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .experience-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-period {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .experience-description {
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-content {
+            padding: 40px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .project-link i {
+            margin-right: 6px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="profile-img">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h1 class="hero-title">Deepanjan Bhol</h1>
+                <p class="hero-subtitle">Senior Principal/Staff Software Engineering Manager</p>
+                <p class="hero-description">
+                    AI Systems Leader at Microsoft with 13+ years driving innovation at the intersection of AI, distributed systems, and enterprise-scale solutions. 4x Patent holder architecting next-generation multi-agent AI systems serving millions of users globally.
+                </p>
+                <div class="social-links">
+                    <a href="mailto:deepanjanbhol@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </a>
+                    <a href="https://linkedin.com/in/deepanjan-bhol" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="tel:+14259798448" class="social-link">
+                        <i class="fas fa-phone"></i>
+                        Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#patents" class="nav-link">Patents</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Engineering Leadership & AI Innovation</h3>
+                    <p>
+                        As a Senior Principal Software Engineering Manager at Microsoft, I lead the architecture and execution of groundbreaking AI-first business applications. My expertise spans multi-agent systems, distributed computing, and enterprise-scale solutions that serve millions of users worldwide.
+                    </p>
+                    <p>
+                        Currently pursuing Stanford GSB's LEAD program, I combine technical depth with business acumen to drive innovation at the intersection of AI, software engineering, and organizational leadership.
+                    </p>
+                    <p>
+                        I'm passionate about building the future of intelligent systems and mentoring the next generation of engineering leaders.
+                    </p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">13+</span>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <div class="stat-label">Patents Granted</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20M+</span>
+                        <div class="stat-label">Monitoring Agents Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5M+</span>
+                        <div class="stat-label">Daily Transactions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Principal/Staff Software Engineering Manager</h3>
+                        <p class="experience-company">Microsoft</p>
+                        <p class="experience-period">Apr 2023 - Present</p>
+                    </div>
+                </div>
+                <div class="experience-description">
+                    <p><strong>Leading AI Innovation & Multi-Agent Systems Development</strong></p>
+                    <p>Architecting Project Sophia, a next-generation AI-first business application transforming enterprise data interaction through autonomous multi-agent orchestration. Secured 4 granted patents in AI/ML innovations while driving cross-functional collaboration across 8+ teams to deliver market-defining capabilities.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Principal Software Engineering Manager</h3>
+                        <p class="experience-company">Microsoft</p>
+                        <p class="experience-period">Mar 2021 - Apr 2023</p>
+                    </div>
+                </div>
+                <div class="experience-description">
+                    <p><strong>Power Platform ISV & Core Infrastructure</strong></p>
+                    <p>Led Power Platform ISV team delivering multi-million dollar revenue growth by doubling publisher onboarding. Managed core infrastructure serving 5M+ daily install requests across 16 global regions, directly interfacing with Fortune 500 customers for strategic alignment.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Software Engineering Manager</h3>
+                        <p class="experience-company">Microsoft</p>
+                        <p class="experience-period">Feb 2020 - Mar 2021</p>
+                    </div>
+                </div>
+                <div class="experience-description">
+                    <p><strong>Azure Capacity Management & ML Systems</strong></p>
+                    <p>Built and deployed machine learning models for Azure resource prediction across multiple services. Designed extensible capacity management system reducing new resource onboarding from months to 2 weeks, with APIs adopted by major enterprises like Adobe, Disney, and Rackspace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Project Sophia</h3>
+                        <p class="project-description">
+                            Next-generation AI-first business application that reimagines how enterprises interact with data and workflows. Built autonomous multi-agent framework enabling intelligent decision-making and seamless user interaction, serving 500K+ enterprise users.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2025/03/05/accelerate-your-journey-to-ai-first-selling-with-microsoft-ai-accelerator-for-sales-and-new-sales-agents/" target="_blank" class="project-link">
+                                <i class="fas fa-blog"></i>
+                                Official Launch
+                            </a>
+                            <a href="https://adoption.microsoft.com/en-us/project-sophia/" target="_blank" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                Product Hub
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=S8PkHL2nO44" target="_blank" class="project-link">
+                                <i class="fab fa-youtube"></i>
+                                Demo Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Azure Monitoring Platform (Geneva)</h3>
+                        <p class="project-description">
+                            Core team member building Azure Monitoring from ground up. Architected Geneva Control Plane managing 20M+ monitoring agents with 25-30K requests/second throughput. Built distributed tracing systems processing 1B+ events/minute across Microsoft's global infrastructure.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://azure.microsoft.com/en-us/products/monitor/" target="_blank" class="project-link">
+                                <i class="fas fa-chart-line"></i>
+                                Azure Monitor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Power Platform Infrastructure</h3>
+                        <p class="project-description">
+                            Led development of core infrastructure services handling 5M+ daily install requests across 16 global regions. Built publisher analytics portal enabling data-driven decisions for 2000+ daily active publishers, contributing to multi-million dollar revenue growth.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://powerplatform.microsoft.com/" target="_blank" class="project-link">
+                                <i class="fas fa-tools"></i>
+                                Power Platform
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="patents" class="experience">
+        <div class="container">
+            <h2 class="section-title">Patents & Recognition</h2>
+            <div class="experience-item">
+                <h3 class="experience-title">Innovation Portfolio</h3>
+                <div class="experience-description">
+                    <p><strong>4 Granted Patents</strong> in AI/ML and enterprise systems innovation (2023-2024)</p>
+                    <p><strong>Microsoft Top Performer</strong> for 4 consecutive years</p>
+                    <p><strong>Technical Leadership Recognition</strong> for Project Sophia and multi-agent systems development</p>
+                    <p><strong>Innovation Awards</strong> for Azure Monitoring platform contributions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Let's Connect</h2>
+            <p>Ready to discuss AI innovation, engineering leadership, or collaboration opportunities?</p>
+            <div class="social-links" style="margin-top: 30px;">
+                <a href="mailto:deepanjanbhol@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    deepanjanbhol@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/deepanjan-bhol" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn Profile
+                </a>
+            </div>
+            <p style="margin-top: 40px; opacity: 0.7;">© 2024 Deepanjan Bhol. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
